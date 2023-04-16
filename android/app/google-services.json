@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "501309981945",
+    "firebase_url": "https://ride-sharing-app-26a3a-default-rtdb.firebaseio.com",
+    "project_id": "ride-sharing-app-26a3a",
+    "storage_bucket": "ride-sharing-app-26a3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501309981945:android:23fb20a98fc9f443020e28",
+        "android_client_info": {
+          "package_name": "com.eyosiasgez.flutterproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501309981945-e8lihv3c12fa2t19h904ltc0ct5k8277.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDRSUXB5bpYkB2xbGn6wC8eLban0PpneE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501309981945-e8lihv3c12fa2t19h904ltc0ct5k8277.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
