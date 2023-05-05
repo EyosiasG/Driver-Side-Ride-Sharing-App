@@ -9,22 +9,21 @@ class TripHistoryDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          leading:BackButton(
+          color: Colors.black,
+        ),
+          title: const Text('Trip Details',
+            style: TextStyle(color: Colors.black),),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  const SizedBox(height: 24,),
-                  const Text(
-                      "Trip Details",
-                      style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
-                      )
-                  ),
-                  SizedBox(height: 30,),
                   Row(
                     children: [
                      Image.asset(
@@ -37,12 +36,19 @@ class TripHistoryDetails extends StatelessWidget {
                         children: [
                           Text(
                             "4-Kilo Campus",
-                            textAlign: TextAlign.left
-                            ,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold
+                            ),
                           ),
-                          SizedBox(height: 30),
+                          Divider(),
                           Text(
-                              "Lafto View Negd Bank"
+                              "Lafto View Negd Bank",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold
+                              ),
+
                           ),
                         ],
                       ),
@@ -50,7 +56,11 @@ class TripHistoryDetails extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 15,),
-                  const Divider(),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Image.asset("images/Map.png"),
+                  ),
+                  SizedBox(height: 15,),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Center(

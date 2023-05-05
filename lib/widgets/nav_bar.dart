@@ -1,11 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterproject/authentication/car_info_screen.dart';
 import 'package:flutterproject/authentication/login_screen.dart';
+import 'package:flutterproject/tabPages/add_trip.dart';
 
 import '../global/global.dart';
 import '../splashScreen/splash_screen.dart';
 
 class NavBar extends StatelessWidget {
+
   const NavBar({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +42,7 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.add),
             title: Text('New Ride'),
-            onTap: () => null,
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (c)=>AddTrip())),
           ),
           ListTile(
             leading: Icon(Icons.notifications),

@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterproject/authentication/signup_screen.dart';
 import 'package:flutterproject/mainScreens/main_screen.dart';
 import 'package:flutterproject/splashScreen/splash_screen.dart';
 import 'package:flutterproject/tabPages/home_tab.dart';
@@ -161,6 +163,28 @@ class LoginScreen extends StatelessWidget {
                           ),
                         )),
                   ),
+                  const SizedBox(height: 12.0),
+                  RichText(
+                      text: TextSpan(children: <TextSpan>[
+                        const TextSpan(
+                            text: "Dont have an account? ",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w300,
+                                fontFamily: 'Poppins',
+                                color: Colors.black)),
+                        TextSpan(
+                            text: "Sign Up",
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (c)=> SignUpScreen())),
+                            style: const TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'Poppins',
+                                color: Colors.lightBlue)),
+                      ])),
                 ],
               ),
             )

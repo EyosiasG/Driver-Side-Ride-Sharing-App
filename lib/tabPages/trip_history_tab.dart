@@ -33,7 +33,10 @@ class _TripHistoryTabPageState extends State<TripHistoryTabPage> {
           scrollDirection: Axis.vertical,
           itemBuilder: (BuildContext context, int index){
             final trip = trips[index];
-            return Card(child: Padding(
+            return Card(
+                shadowColor: Colors.transparent,
+                elevation: 0,
+                child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: ListTile(
                 title : Text('Destination $index',
@@ -66,7 +69,7 @@ class _TripHistoryTabPageState extends State<TripHistoryTabPage> {
                   ));
                 },
               ),
-            )
+            ),
 
             );
           }
