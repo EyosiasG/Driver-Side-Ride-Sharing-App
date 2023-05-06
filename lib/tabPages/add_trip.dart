@@ -28,12 +28,13 @@ class _AddTripState extends State<AddTrip> {
   var _dateTime = DateTime.now();
   var _timeOfDay = TimeOfDay.now();
   static const uuid = Uuid();
-  String? userId;
+  String? tripId = uuid.v4() + currentFirebaseUser!.uid.toString();
 
   saveTripInfo(){
-    Map driverTrip =
+    Map driverTripMap =
     {
-      "id": uuid.v4() + currentFirebaseUser!.email.toString(),
+      "id": tripId,
+      "driver_id": currentFirebaseUser!.uid.toString(),
       "pick_up": pickUpLocationEditingController.text.trim(),
       "drop_off" : dropOffLocationEditingController.text.trim(),
       "seats": _selectedSeats,
@@ -41,9 +42,9 @@ class _AddTripState extends State<AddTrip> {
       "time": _timeOfDay,
     };
 
-    DatabaseReference driverRef = FirebaseDatabase.instance.ref().child("drivers");
-    driverRef.child(currentFirebaseUser!.uid).child("trips").set(driverTrip);
-    userId = currentFirebaseUser!.uid;
+
+    DatabaseReference driverRef = FirebaseDatabase.instance.ref().child("trips");
+    driverRef.child(tripId!).set(driverTripMap);
     Fluttertoast.showToast(msg: "Trip Details has been saved");
 
   }

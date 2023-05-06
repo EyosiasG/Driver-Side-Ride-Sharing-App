@@ -10,9 +10,29 @@ class HomeTabPage extends StatefulWidget {
 class _HomeTabPageState extends State<HomeTabPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Text(
-            "Home"
+    return Scaffold(
+        body: Column(
+          children: [
+            Expanded(
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: ElevatedButton(
+                    onPressed: () {
+
+                    },
+                    child: Icon(Icons.add, color: Colors.white),
+                    style: ElevatedButton.styleFrom(
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(15),
+                      backgroundColor: Colors.greenAccent, // <-- Button color
+                      foregroundColor: Colors.green, // <-- Splash color
+                    ),
+                  ),
+                )
+            ),
+            SizedBox(height: 10,)
+
+          ],
         )
     );
   }
