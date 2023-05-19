@@ -11,10 +11,6 @@ import 'package:flutterproject/authentication/car_info_screen.dart';
 import 'package:flutterproject/widgets/progress_dialog.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
-
-
-
-
 import '../global/global.dart';
 import '../splashScreen/splash_screen.dart';
 import 'login_screen.dart';

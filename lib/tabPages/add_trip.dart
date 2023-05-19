@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
-
-
 import '../components/number_stepper.dart';
 import '../components/text_field.dart';
 import '../global/global.dart';
@@ -19,7 +17,6 @@ class AddTrip extends StatefulWidget {
 }
 
 class _AddTripState extends State<AddTrip> {
-  final FirebaseAuth auth = FirebaseAuth.instance;
 
   TextEditingController pickUpLocationEditingController = TextEditingController();
   TextEditingController dropOffLocationEditingController = TextEditingController();
@@ -30,21 +27,20 @@ class _AddTripState extends State<AddTrip> {
   static const uuid = Uuid();
   String? tripId = uuid.v4() + currentFirebaseUser!.uid.toString();
 
-  saveTripInfo(){
+  saveTripInfo() async{
     Map driverTripMap =
     {
-      "id": tripId,
-      "driver_id": currentFirebaseUser!.uid.toString(),
+
+    };
+    FirebaseDatabase.instance.reference().child("trips").push().set({
       "pick_up": pickUpLocationEditingController.text.trim(),
       "drop_off" : dropOffLocationEditingController.text.trim(),
-      "seats": _selectedSeats,
-      "date": _dateTime,
-      "time": _timeOfDay,
-    };
+      "seats": _selectedSeats.toString(),
+      "date": _dateTime.toString(),
+      "time": _timeOfDay.toString(),
+      "driver_id": currentFirebaseUser!.uid.toString(),
+    });
 
-
-    DatabaseReference driverRef = FirebaseDatabase.instance.ref().child("trips");
-    driverRef.child(tripId!).set(driverTripMap);
     Fluttertoast.showToast(msg: "Trip Details has been saved");
 
   }

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutterproject/tabPages/trip_history_tab.dart';
 
 class TripHistoryDetails extends StatelessWidget {
-  const TripHistoryDetails({Key? key, required this.trip}) : super(key: key);
+  const TripHistoryDetails({Key? key, required this.item}) : super(key: key);
 
-  final Trip trip;
+  final Trip item;
 
   @override
   Widget build(BuildContext context) {
